@@ -11,16 +11,14 @@ class Search extends Component {
     error:''
   }
 
-  handleInputChange = event => {
-    this.setState({ search: event.target.value });
-    console.log(event.target.value )
-  };
+
 
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
+    console.log(this.state.search)
   };
 
 
