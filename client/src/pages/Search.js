@@ -4,7 +4,7 @@ import Jumbotron from '../components/Jumbotron';
 import SearchForm from '../components/SearchForm';
 import BookList from '../components/BookList'
 import Book from '../components/Book';
-import API from '../utils/googleBookAPI'
+import API from '../utils/API'
 
 
 class Search extends Component {
