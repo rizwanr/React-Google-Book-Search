@@ -31,12 +31,14 @@ class Search extends Component {
     this.setState({
       search: value
     });
+
   };
 
   handleSubmitButton = event => {
     console.log('clicked')
     event.preventDefault();
     this.loadBooks()
+    this.setState({search:''})
   };
 
 
@@ -51,7 +53,6 @@ render(){
       ) : (
           <h3>No Results to Display</h3>
         )}
-   <Book/>
    </div>
    
 

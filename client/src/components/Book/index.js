@@ -1,28 +1,28 @@
 import React from 'react';
 
 
-function Book(props){
+function Book({ title, authors, description, image, link}){
   return (
     <div className="Book container">
       <div className="card">
         <div className="card-header">
           <div className="row">
             <div className="col-8">
-              <p>title:Harry Potter</p>
+              <p>{title}</p>
             </div>
             <div className="col-4 d-flex flex-row-reverse">
-              <button type="button" className="btn btn-primary ">Primary</button>
-              <button type="button" className="btn btn-secondary ml-2">Secondary</button>
+              <button type="button" className="btn btn-primary ">View</button>
+              <button type="button" className="btn btn-secondary ml-2">Save</button>
             </div>
           </div>
       </div>
         <div className="card-body">
           <blockquote className="blockquote">
       
-            <p>Author:JK Rowling</p>
+            <p>{authors}</p>
             <div className="row">
-              <div className="col-3"><img /></div>
-              <div className="col-8">Description</div>
+              <div className="col-3"><img src={image} alt={title} /></div>
+              <div className="col-8">{description}</div>
             </div>
            
         
