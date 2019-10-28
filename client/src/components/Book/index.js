@@ -3,7 +3,7 @@ import DeleteBtn from '../DeleteBtn';
 import SaveBtn from '../SaveBtn';
 
 
-function Book({ title, authors, description, image, link, handleSaveBook}){
+function Book({id, title, authors, description, image, link, handleSaveBook, deleteBook}){
   return (
     <div className="Book container">
       <div className="card">
@@ -13,9 +13,9 @@ function Book({ title, authors, description, image, link, handleSaveBook}){
               <p>{title}</p>
             </div>
             <div className="col-4 d-flex flex-row-reverse">
-              <button type="button" className="btn btn-primary ">View</button>
+              <a href={link} className="btn btn-primary ml-2" style={{height:'36px'}} target="_blank" rel="noopener noreferrer" >View</a>
               <SaveBtn onClick={() => handleSaveBook(title, authors, description, image, link)}/>
-              <DeleteBtn/>
+              <DeleteBtn onClick={() => deleteBook(id)}/>
             </div>
           </div>
       </div>

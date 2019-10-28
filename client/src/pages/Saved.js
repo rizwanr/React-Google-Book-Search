@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Jumbotron from '../components/Jumbotron';
-import SearchForm from '../components/SearchForm';
 import Book from '../components/Book';
 import API from '../utils/API'
 
@@ -23,13 +21,20 @@ class Saved extends Component {
       .catch(err => console.log(err));
   };
 
+  deleteBook = id => {
+    API.deleteBook(id)
+      .then(res => this.loadSavedBooks())
+      .catch(err => console.log(err));
+  };
+
 
   render() {
     return (
     <div className='Saved'>
         {this.state.savedBooks.length ? (
           this.state.savedBooks.map(book => {
-            return <Book key={book.id} title={book.title} authors={book.authors} image={book.image} description={book.description} link={book.link}  />
+            console.log(book)
+            return <Book id={book._id} key={book._id} title={book.title} authors={book.authors} image={book.image} description={book.description} link={book.link} deleteBook={this.deleteBook} />
           })
 
         ) : (

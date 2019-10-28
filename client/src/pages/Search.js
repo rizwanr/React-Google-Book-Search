@@ -1,5 +1,4 @@
 import  React,{Component} from "react";
-import Jumbotron from '../components/Jumbotron';
 import SearchForm from '../components/SearchForm';
 import Book from '../components/Book';
 import API from '../utils/API'
@@ -12,9 +11,7 @@ class Search extends Component {
     error:''
   }
 
-  componentDidMount() {
-    this.loadBooks();
-  }
+  
 
   loadBooks = () => {
     API.getBookByTitle(this.state.search)
@@ -32,8 +29,9 @@ class Search extends Component {
 
   };
 
+
+
   handleSubmitButton = event => {
-    console.log('clicked')
     event.preventDefault();
     this.loadBooks()
     this.setState({search:''})

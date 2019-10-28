@@ -5,8 +5,12 @@ export default{
     return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${title}`);
   },
 
-  getSavedBooks: function () {
+  getSavedBooks () {
     return axios.get("/api/books");
+  },
+
+  deleteBook (id) {
+    return axios.delete("/api/books/" + id);
   },
 
   saveBook(bookData){
