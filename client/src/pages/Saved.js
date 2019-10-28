@@ -30,7 +30,7 @@ class Saved extends Component {
 
   render() {
     return (
-    <div className='Saved'>
+      <div className='Saved'>
         {this.state.savedBooks.length ? (
           this.state.savedBooks.map(book => {
             console.log(book)
@@ -40,11 +40,11 @@ class Saved extends Component {
         ) : (
             <h3>No Results to Display</h3>
           )}
-    </div>
+      </div>
 
     )
 
-}
+  }
 
 }
 
