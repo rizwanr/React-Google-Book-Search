@@ -53,6 +53,14 @@ class Search extends Component {
 
     console.log(image)
     console.log(link)
+    API.saveBook({
+      title,
+      authors,
+      description,
+      image,
+      link,
+    })
+    .catch (err => console.log(err));
 
   }
 
@@ -66,7 +74,7 @@ render(){
       {this.state.books.length ? (
         this.state.books.map(book => {
           console.log(book)
-          let authors = book.volumeInfo.authors;
+          let authors = book.volumeInfo.authors.join(', ');
           let title = book.volumeInfo.title;
           let imageSrc = book.volumeInfo.imageLinks.thumbnail;
           let description = book.volumeInfo.description;
