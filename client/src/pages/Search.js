@@ -46,8 +46,14 @@ class Search extends Component {
     this.setState({search:''})
   };
 
-  handleSaveBook=title=>{
-    console.log(`clicked ${title}`)
+  handleSaveBook = (title, authors, description, image, link)=>{
+    console.log(title);
+    console.log(authors)
+    console.log(description)
+
+    console.log(image)
+    console.log(link)
+
   }
 
 
@@ -59,12 +65,13 @@ render(){
       <SearchForm handleInputChange={this.handleInputChange} handleSubmitButton={this.handleSubmitButton} />
       {this.state.books.length ? (
         this.state.books.map(book => {
-          let author = book.volumeInfo.authors;
+          console.log(book)
+          let authors = book.volumeInfo.authors;
           let title = book.volumeInfo.title;
           let imageSrc = book.volumeInfo.imageLinks.thumbnail;
           let description = book.volumeInfo.description;
           let link = book.volumeInfo.previewLink;
-          return <Book key={title} title={title} author={title} image={imageSrc} description={description} link={link} handleSaveBook={this.handleSaveBook} />
+          return <Book key={title} title={title} authors={authors} image={imageSrc} description={description} link={link} handleSaveBook={this.handleSaveBook} />
         })
    
       ) : (

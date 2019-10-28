@@ -12,7 +12,7 @@ function Book({ title, authors, description, image, link, handleSaveBook}){
             </div>
             <div className="col-4 d-flex flex-row-reverse">
               <button type="button" className="btn btn-primary ">View</button>
-              <button type="button" className="btn btn-secondary ml-2" onClick={() => handleSaveBook(title)}>Save</button>
+              <button type="button" className="btn btn-secondary ml-2" onClick={() => handleSaveBook(title, authors, description, image, link)}>Save</button>
             </div>
           </div>
       </div>
