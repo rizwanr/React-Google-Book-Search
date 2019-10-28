@@ -11,6 +11,11 @@ class Search extends Component {
   state={
     search:'',
     books:[],
+    title:'',
+    authors:'',
+    image:'',
+    description:'',
+    link:'',
     error:''
   }
 
@@ -41,6 +46,10 @@ class Search extends Component {
     this.setState({search:''})
   };
 
+  handleSaveBook=title=>{
+    console.log(`clicked ${title}`)
+  }
+
 
 render(){
   return(
@@ -49,7 +58,15 @@ render(){
    <Jumbotron title ="(React) Google Book Search" description="Search Book and Save Books of Interest"/>
       <SearchForm handleInputChange={this.handleInputChange} handleSubmitButton={this.handleSubmitButton} />
       {this.state.books.length ? (
-      <BookList books ={this.state.books}/>
+        this.state.books.map(book => {
+          let author = book.volumeInfo.authors;
+          let title = book.volumeInfo.title;
+          let imageSrc = book.volumeInfo.imageLinks.thumbnail;
+          let description = book.volumeInfo.description;
+          let link = book.volumeInfo.previewLink;
+          return <Book key={title} title={title} author={title} image={imageSrc} description={description} link={link} handleSaveBook={this.handleSaveBook} />
+        })
+   
       ) : (
           <h3>No Results to Display</h3>
         )}

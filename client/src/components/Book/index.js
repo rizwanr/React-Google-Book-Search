@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function Book({ title, authors, description, image, link}){
+function Book({ title, authors, description, image, link, handleSaveBook}){
   return (
     <div className="Book container">
       <div className="card">
@@ -12,7 +12,7 @@ function Book({ title, authors, description, image, link}){
             </div>
             <div className="col-4 d-flex flex-row-reverse">
               <button type="button" className="btn btn-primary ">View</button>
-              <button type="button" className="btn btn-secondary ml-2">Save</button>
+              <button type="button" className="btn btn-secondary ml-2" onClick={() => handleSaveBook(title)}>Save</button>
             </div>
           </div>
       </div>
