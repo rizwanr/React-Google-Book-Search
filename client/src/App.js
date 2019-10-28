@@ -1,14 +1,26 @@
 import React, { Component } from "react";
-import Search from '../src/pages/Search'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Search from './pages/Search'
+import Saved from './pages/Saved'
+import Nav from './components/Nav';
+import Jumbotron from "./components/Jumbotron";
 import "./App.css";
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App container">
-       <Search/>
-      </div>
-    );
+      <Router>
+        <div className="App container">
+          <Nav />
+          <Jumbotron title="(React) Google Book Search" description="Search Book and Save Books of Interest" />
+          <Switch>
+            <Route exact path="/search" component={Search} />
+            <Route exact path="/saved" component={Saved} />   
+          </Switch>
+        </div>
+      </Router>
+    )
   }
 }
 
