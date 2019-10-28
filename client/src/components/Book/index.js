@@ -14,8 +14,9 @@ function Book({id, title, authors, description, image, link, handleSaveBook, del
             </div>
             <div className="col-4 d-flex flex-row-reverse">
               <a href={link} className="btn btn-primary ml-2" style={{height:'36px'}} target="_blank" rel="noopener noreferrer" >View</a>
-              <SaveBtn onClick={() => handleSaveBook(title, authors, description, image, link)}/>
-              <DeleteBtn onClick={() => deleteBook(id)}/>
+              {id ? <DeleteBtn onClick={() => deleteBook(id)} /> :
+                (<SaveBtn onClick={() => handleSaveBook(title, authors, description, image, link)} />)
+            } 
             </div>
           </div>
       </div>
