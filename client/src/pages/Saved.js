@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Book from '../components/Book';
+import Jumbotron from '../components/Jumbotron'
 import API from '../utils/API'
 
 
@@ -31,6 +32,7 @@ class Saved extends Component {
   render() {
     return (
       <div className='Saved'>
+        <Jumbotron title="(React) Google Book Search" description="Search Book and Save Books of Interest" />
         {this.state.savedBooks.length ? (
           this.state.savedBooks.map(book => {
             console.log(book)

@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import SearchForm from '../components/SearchForm';
 import Book from '../components/Book';
-import API from '../utils/API'
+import Jumbotron from '../components/Jumbotron'
+import API from '../utils/API';
+
 
 
 class Search extends Component {
@@ -59,6 +61,7 @@ class Search extends Component {
   render() {
     return (
       <div className="Search">
+        <Jumbotron title="(React) Google Book Search" description="Search Book and Save Books of Interest" />
         <SearchForm handleInputChange={this.handleInputChange} handleSubmitButton={this.handleSubmitButton} />
         {this.state.books.length ? (
           this.state.books.map(book => {
