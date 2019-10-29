@@ -5,7 +5,7 @@ import SaveBtn from '../SaveBtn';
 
 function Book({ id, title, authors, description, image, link, handleSaveBook, deleteBook }) {
   return (
-    <div className="Book container">
+    <div className="Book">
       <div className="card">
         <div className="card-header">
           <div className="row">

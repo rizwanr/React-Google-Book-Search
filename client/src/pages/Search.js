@@ -63,11 +63,11 @@ class Search extends Component {
         {this.state.books.length ? (
           this.state.books.map(book => {
             console.log(book)
-            let authors = book.volumeInfo.authors.join(', ');
-            let title = book.volumeInfo.title;
-            let imageSrc = book.volumeInfo.imageLinks.thumbnail;
-            let description = book.volumeInfo.description;
-            let link = book.volumeInfo.previewLink;
+            let authors = book.volumeInfo.authors ? book.volumeInfo.authors.join(', '):'';
+            let title = book.volumeInfo.title ? book.volumeInfo.title: 'No title found';
+            let imageSrc = book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail:'No image found';
+            let description = book.volumeInfo.description ? book.volumeInfo.description:'No description available';
+            let link = book.volumeInfo.previewLink ? book.volumeInfo.previewLink:'No link available';
             return <Book key={title} title={title} authors={authors} image={imageSrc} description={description} link={link} handleSaveBook={this.handleSaveBook} />
           })
 
