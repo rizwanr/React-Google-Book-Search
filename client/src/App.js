@@ -4,7 +4,7 @@ import Search from './pages/Search'
 import Saved from './pages/Saved'
 import Nav from './components/Nav';
 import Jumbotron from "./components/Jumbotron";
-import "./App.css";
+
 
 
 class App extends Component {
@@ -16,7 +16,7 @@ class App extends Component {
           <Jumbotron title="(React) Google Book Search" description="Search Book and Save Books of Interest" />
           <Switch>
             <Route exact path="/search" component={Search} />
-            <Route exact path="/saved" component={Saved} />   
+            <Route exact path="/saved" component={Saved} />
           </Switch>
         </div>
       </Router>
@@ -25,3 +25,6 @@ class App extends Component {
 }
 
 export default App;
+
+
+
